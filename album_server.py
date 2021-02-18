@@ -13,9 +13,9 @@ def albums(artist):
         result = HTTPError(404, message)
     else:
         album_names = [album.album for album in album_list]
-        result = "Найдено {} альбомов {} \n".format(len(album_names), artist)
-        result += "Список найденных альбомов:\n"
-        result += "\n".join(album_names)
+        result = "Найдено {} альбомов {} <br><br>".format(len(album_names), artist)
+        result += "Список найденных альбомов:<br>  - "
+        result += "<br>  - ".join(album_names)
     return result
 
 @route("/albums", method="POST")
